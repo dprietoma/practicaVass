@@ -1,27 +1,30 @@
-
+<form [formGroup]="enviarForm">
     <div class="container mt-4">
         <div class="row mt-4">
             <div class="col-md-6">
-                <input class="form-control" type="text" placeholder="Nombre y apellidos" aria-label="default input example">
+                <input class="form-control" name="Nombre" formControlName="nombre" type="text"
+                    placeholder="Nombre y apellidos" aria-label="default input example">
                 <div class="mb-3 mt-2">
-                    <input type="email" class="form-control mt-4" id="exampleFormControlInput1" placeholder="Email">
+                    <input type="email" class="form-control mt-4" name="email" formControlName="email"
+                        id="exampleFormControlInput1" placeholder="Email">
                     <input class="form-control mt-4" type="text" placeholder="Empresa / Organismo"
-                        aria-label="default input example">
-                    <input class="form-control mt-4" type="text" placeholder="Pais" aria-label="default input example">
+                        aria-label="default input example" name="empresa" formControlName="empresa">
+                    <input class="form-control mt-4" type="text" placeholder="Pais" aria-label="default input example"
+                        name="pais" formControlName="pais">
                 </div>
             </div>
-        
+
             <div class="col-md-6">
                 <input class="form-control" type="tel" placeholder="Telefono" aria-label="default input example">
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label mt-2">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                 <label for="exampleFormControlTextarea1" class="form-label mt-2">Mensaje</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensaje"
+                        formControlName="mensaje"></textarea>
                 </div>
-                <button type="button" class="btn btn-secondary">Enviar</button>
-            
             </div>
         </div>
-    </div> 
-
-
-
+        <div class="row modal-footer">
+            <button type="button" class="btn btn-dark">Enviar</button>
+       </div>
+    </div>
+</form>

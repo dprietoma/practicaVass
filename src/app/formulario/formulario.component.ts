@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-formulario',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.sass']
 })
 export class FormularioComponent implements OnInit {
-
-  constructor() { }
+  enviarForm: FormGroup;
+  constructor(private readonly formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.instanciaFormulario();
+  }
+
+  instanciaFormulario() {
+    this.enviarForm = this.formBuilder.group({
+      nombre: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      empresa: ['', [Validators.required]],
+      pais: ['', [Validators.required]],
+      mensaje: ['', [Validators.required]]
+    });
   }
 
 }
